@@ -21,7 +21,7 @@ const creatingInitialDivs = () => {
     new_card_image_back.src = 'images/back_card.png';
     new_back_card.appendChild(new_card_image_back);
     new_front_card.appendChild(new_card_image);
-  }  
+  }
 }
 
 const generateRandomIndex = () => {
@@ -41,6 +41,7 @@ const generateRandomIndex = () => {
 const insertRandomImages = () => {
   const front_card_images = document.getElementsByClassName('card-image-front');
   const random_numbers_array = generateRandomIndex();
+  localStorage.setItem('array', JSON.stringify(random_numbers_array));
   for(let i = 0; i < front_card_images.length; i += 1) {
     front_card_images[i].src = images_array[random_numbers_array[i]];
   }
@@ -78,7 +79,6 @@ const flipFunction = () => {
   const cards = document.querySelectorAll('.card-container');
   for (let i = 0; i < cards.length; i += 1) {
     cards[i].addEventListener('click', async ({ target }) => {
-      console.log(target)
       if (target.classList[0] !== 'card-container' && target.classList[0] !== 'card-front'){
       target.parentNode.parentNode.classList.add('flip');
       const flipped = document.querySelectorAll('.flip');
@@ -89,6 +89,10 @@ const flipFunction = () => {
           flipped[0].classList.add('find')
           flipped[1].classList.add('find')
           const find = document.querySelectorAll('.find');
+          console.log(find) 
+          for (let i = 0; i < find.length; i += 1) {
+              localStorage.setItem(`find${i}`, find[i].innerHTML);            
+          }
           if (find.length === 30) {
             setTimeout(() => {
               createWinnerPopout();
@@ -128,9 +132,13 @@ const dinamicFooter = () => {
   
 }
 
+const test = () => {
+  
+}
+
 window.onload = () => {
   creatingInitialDivs();
   insertRandomImages();
   flipFunction();  
-  dinamicFooter()
+  dinamicFooter();
 }
