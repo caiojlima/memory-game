@@ -15,4 +15,19 @@
 
 .game-container {
   background-color: rgb(96, 194, 139);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  height: 300px;
+  width: 100%;
+}
+
+.card-front {
+  background-color: brown;
+  height: 120px;
+  width: 120px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 2px solid black;
 }
