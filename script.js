@@ -78,7 +78,6 @@ const flipFunction = () => {
   const cards = document.querySelectorAll('.card-container');
   for (let i = 0; i < cards.length; i += 1) {
     cards[i].addEventListener('click', async ({ target }) => {
-      console.log(target.classList[0])
       if (target.classList[0] !== 'card-container'){
       target.parentNode.parentNode.classList.add('flip');
       const flipped = document.querySelectorAll('.flip');
@@ -89,7 +88,7 @@ const flipFunction = () => {
           flipped[0].classList.add('find')
           flipped[1].classList.add('find')
           const find = document.querySelectorAll('.find');
-          if (find.length === 2) {
+          if (find.length === 30) {
             setTimeout(() => {
               createWinnerPopout();
             }, 1000);
