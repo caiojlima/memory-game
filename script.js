@@ -47,8 +47,21 @@ const flipFunction = () => {
   const cards = document.querySelectorAll('.card-container');
   for (let i = 0; i < cards.length; i += 1) {
     cards[i].addEventListener('click', ({ target }) => {
-      console.log(target.parentNode.parentNode)
       target.parentNode.parentNode.classList.add('flip');
+      const flipped = document.querySelectorAll('.flip');
+      if (flipped.length === 2) {
+        if(flipped[0].firstChild.firstChild.src === flipped[1].firstChild.firstChild.src) {
+          flipped[0].classList.remove('flip')
+          flipped[1].classList.remove('flip')
+          flipped[0].classList.add('find')
+          flipped[1].classList.add('find')
+        } else {
+          setTimeout(() => {
+            flipped[0].classList.remove('flip')
+            flipped[1].classList.remove('flip')
+          }, 1000);
+        }
+      }
     })
   }
 }

@@ -75,6 +75,10 @@ body {
   transform: rotateY(180deg);
 }
 
+.find {
+  transform: rotateY(180deg);
+}
+
 .footer {
   background-color: rgb(49, 108, 82) ;
   height: 4em;
