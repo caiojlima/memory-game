@@ -91,7 +91,7 @@ const flipFunction = () => {
           if (find.length === 30) {
             setTimeout(() => {
               createWinnerPopout();
-            }, 1000);
+            },  1000);
           }
         } else {
           createBlock();
