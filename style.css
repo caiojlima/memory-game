@@ -1,3 +1,6 @@
+body {
+  background-color: rgb(49, 108, 82) ;
+}
 
 .header {
   display: flex;
