@@ -53,7 +53,10 @@ const createWinnerPopout = () => {
   div_container.appendChild(h2);
   const reload_button = document.createElement('button');
   reload_button.className = 'reload-button';
-  reload_button.innerText = 'JOGAR NOVAMENTE'
+  reload_button.innerText = 'JOGAR NOVAMENTE';
+  reload_button.addEventListener('click', () => {
+    window.location.reload();
+  })
   div_container.appendChild(reload_button);
 }
 
@@ -88,6 +91,6 @@ const flipFunction = () => {
 
 window.onload = () => {
   creatingInitialDivs();
-  insertRandomImages()
-  flipFunction()
+  insertRandomImages();
+  flipFunction();
 }
