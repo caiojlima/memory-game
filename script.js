@@ -60,10 +60,21 @@ const createWinnerPopout = () => {
   div_container.appendChild(reload_button);
 }
 
+const createBlock = () => {
+  const div_container = document.createElement('div');
+  div_container.className = 'block';
+  document.querySelector('body').insertBefore(div_container, document.querySelector('.header'));
+}
+
+const removeBloc = () => {
+  const block = document.querySelector('.block')
+  block.remove();
+}
+
 const flipFunction = () => {
   const cards = document.querySelectorAll('.card-container');
   for (let i = 0; i < cards.length; i += 1) {
-    cards[i].addEventListener('click', ({ target }) => {
+    cards[i].addEventListener('click', async ({ target }) => {
       console.log(target.classList[0])
       if (target.classList[0] !== 'card-container'){
       target.parentNode.parentNode.classList.add('flip');
@@ -81,10 +92,13 @@ const flipFunction = () => {
             }, 1000);
           }
         } else {
+          createBlock();
           setTimeout(() => {
             flipped[0].classList.remove('flip')
             flipped[1].classList.remove('flip')
+            removeBloc();
           }, 1000);
+
         }
       }
     }
