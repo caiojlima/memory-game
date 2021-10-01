@@ -78,7 +78,8 @@ const flipFunction = () => {
   const cards = document.querySelectorAll('.card-container');
   for (let i = 0; i < cards.length; i += 1) {
     cards[i].addEventListener('click', async ({ target }) => {
-      if (target.classList[0] !== 'card-container'){
+      console.log(target)
+      if (target.classList[0] !== 'card-container' && target.classList[0] !== 'card-image-front'){
       target.parentNode.parentNode.classList.add('flip');
       const flipped = document.querySelectorAll('.flip');
       if (flipped.length === 2) {
