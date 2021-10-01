@@ -1,6 +1,7 @@
 const game_container = document.querySelector('.game-container')
 const images_array = ['/images/ana_du.jpeg', '/images/ana_laura.jpeg', '/images/baeta.jpeg', '/images/cairo_noleto.jpeg', '/images/djvoana_boeing.jpeg', '/images/gabi_martins.jpeg', '/images/gus_caetano.jpeg', '/images/isaac_batista.jpeg', '/images/jessica_lopes.jpeg', '/images/lucas_cassiano.jpeg', '/images/matheus_goyas.jpeg', '/images/oliva.jpeg','/images/rafael-luiz.jpeg', '/images/rods.jpeg', '/images/ronald_lima.jpeg'];
 
+
 const creatingInitialDivs = () => {
   for (let i = 0; i < 30; i += 1) {
     const new_card_container = document.createElement('div');
@@ -30,9 +31,11 @@ const generateRandomIndex = () => {
     if(random_numbers_array.filter((elem) => elem === random_number).length < 2) {
     random_numbers_array.push(random_number);
     } else {
+      if(random_numbers_array.length === 30) {
+        return random_numbers_array;
+      }
     }
   }
-  return random_numbers_array;
 } 
 
 const insertRandomImages = () => {
@@ -75,7 +78,6 @@ const flipFunction = () => {
   const cards = document.querySelectorAll('.card-container');
   for (let i = 0; i < cards.length; i += 1) {
     cards[i].addEventListener('click', async ({ target }) => {
-      console.log(target.classList[0])
       if (target.classList[0] !== 'card-container'){
       target.parentNode.parentNode.classList.add('flip');
       const flipped = document.querySelectorAll('.flip');

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Press+Start+2P&display=swap');
 body {
   background-color: rgb(49, 108, 82) ;
 }
@@ -108,24 +109,28 @@ body {
 
 .winner-text {
   color: white;
-  font-size: 3.5em;
-  margin-bottom: 2em;
+  font-size: 6em;
+  margin-bottom: 1em;
+  font-family: 'Great Vibes', cursive;
 }
 
 .reload-button {
-  width:  15em;
+  width:  16em;
   height: 4em;
   border: none;
   border-radius: 0.5em;
   cursor: pointer;
-  background-color: rgb(39, 189, 59);
+  color: white;
+  font-family: 'Press Start 2P', cursive;
+  background-image: linear-gradient(to bottom right, rgb(6, 53, 12), rgb(39, 189, 59));
   font-size: 1em;
   font-weight: 900;
 }
 
 .reload-button:hover {
-  transition: linear 0.6s;
-  transform:scale(1.2)
+  transition: linear 0.3s;
+  transform:scale(1.1);
+  background-image: linear-gradient(to right bottom, rgb(39, 189, 59), rgb(6, 53, 12));
 }
 
 .block {
