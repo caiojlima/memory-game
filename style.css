@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 body {
   background-color: rgb(49, 108, 82) ;
 }
@@ -110,6 +111,7 @@ body {
   color: white;
   font-size: 3.5em;
   margin-bottom: 2em;
+  font-family: 'Great Vibes', cursive;
 }
 
 .reload-button {

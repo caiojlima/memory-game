@@ -1,6 +1,7 @@
 const game_container = document.querySelector('.game-container')
 const images_array = ['/images/ana_du.jpeg', '/images/ana_laura.jpeg', '/images/baeta.jpeg', '/images/cairo_noleto.jpeg', '/images/djvoana_boeing.jpeg', '/images/gabi_martins.jpeg', '/images/gus_caetano.jpeg', '/images/isaac_batista.jpeg', '/images/jessica_lopes.jpeg', '/images/lucas_cassiano.jpeg', '/images/matheus_goyas.jpeg', '/images/oliva.jpeg','/images/rafael-luiz.jpeg', '/images/rods.jpeg', '/images/ronald_lima.jpeg'];
 
+
 const creatingInitialDivs = () => {
   for (let i = 0; i < 30; i += 1) {
     const new_card_container = document.createElement('div');
