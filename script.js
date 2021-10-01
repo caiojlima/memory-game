@@ -43,7 +43,18 @@ const insertRandomImages = () => {
   }
 }
 
+const flipFunction = () => {
+  const cards = document.querySelectorAll('.card-container');
+  for (let i = 0; i < cards.length; i += 1) {
+    cards[i].addEventListener('click', ({ target }) => {
+      console.log(target.parentNode.parentNode)
+      target.parentNode.parentNode.classList.add('flip');
+    })
+  }
+}
+
 window.onload = () => {
   creatingInitialDivs();
   insertRandomImages()
+  flipFunction()
 }

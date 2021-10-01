@@ -26,7 +26,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   height: 25em;
-  width: fit-content;
+  width: fit-content;  
 }
 
 .card-container {
@@ -37,6 +37,8 @@ body {
   box-shadow: 5px ;
   border-radius: 15px;
   position: relative;
+  transform-style: preserve-3d;
+  transition: transform .5s;
 }
 
 
@@ -44,8 +46,9 @@ body {
   height: 7em;
   width: 7em;
   border-radius: 5px;
-  transform: rotateY(180deg);
   position:absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
 }
 
 .card-front img {
@@ -59,12 +62,17 @@ body {
   width: 7em;
   border-radius: 5px;
   position:absolute;
+  backface-visibility: hidden;
 }
 
 .card-back img {
   height: 7em;
   width: 7em;
   border-radius: 5px;
+}
+
+.flip {
+  transform: rotateY(180deg);
 }
 
 .footer {
