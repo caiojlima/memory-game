@@ -86,7 +86,7 @@ const flipFunction = () => {
           flipped[0].classList.add('find')
           flipped[1].classList.add('find')
           const find = document.querySelectorAll('.find');
-          if (find.length === 2) {
+          if (find.length === 30) {
             setTimeout(() => {
               createWinnerPopout();
             }, 1000);
