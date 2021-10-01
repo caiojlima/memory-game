@@ -31,9 +31,11 @@ const generateRandomIndex = () => {
     if(random_numbers_array.filter((elem) => elem === random_number).length < 2) {
     random_numbers_array.push(random_number);
     } else {
+      if(random_numbers_array.length === 30) {
+        return random_numbers_array;
+      }
     }
   }
-  return random_numbers_array;
 } 
 
 const insertRandomImages = () => {
@@ -87,7 +89,7 @@ const flipFunction = () => {
           flipped[0].classList.add('find')
           flipped[1].classList.add('find')
           const find = document.querySelectorAll('.find');
-          if (find.length === 30) {
+          if (find.length === 2) {
             setTimeout(() => {
               createWinnerPopout();
             }, 1000);
