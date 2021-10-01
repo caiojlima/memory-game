@@ -64,6 +64,8 @@ const flipFunction = () => {
   const cards = document.querySelectorAll('.card-container');
   for (let i = 0; i < cards.length; i += 1) {
     cards[i].addEventListener('click', ({ target }) => {
+      console.log(target.classList[0])
+      if (target.classList[0] !== 'card-container'){
       target.parentNode.parentNode.classList.add('flip');
       const flipped = document.querySelectorAll('.flip');
       if (flipped.length === 2) {
@@ -85,6 +87,7 @@ const flipFunction = () => {
           }, 1000);
         }
       }
+    }
     })
   }
 }
