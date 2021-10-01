@@ -43,6 +43,20 @@ const insertRandomImages = () => {
   }
 }
 
+const createWinnerPopout = () => {
+  const div_container = document.createElement('div');
+  div_container.className = 'winner-container';
+  document.querySelector('body').insertBefore(div_container, document.querySelector('.header'));
+  const h2 = document.createElement('h2');
+  h2.className = 'winner-text';
+  h2.innerText = 'Obrigado por todos os ensinamentos!';
+  div_container.appendChild(h2);
+  const reload_button = document.createElement('button');
+  reload_button.className = 'reload-button';
+  reload_button.innerText = 'JOGAR NOVAMENTE'
+  div_container.appendChild(reload_button);
+}
+
 const flipFunction = () => {
   const cards = document.querySelectorAll('.card-container');
   for (let i = 0; i < cards.length; i += 1) {
@@ -55,6 +69,12 @@ const flipFunction = () => {
           flipped[1].classList.remove('flip')
           flipped[0].classList.add('find')
           flipped[1].classList.add('find')
+          const find = document.querySelectorAll('.find');
+          if (find.length === 2) {
+            setTimeout(() => {
+              createWinnerPopout();
+            }, 1000);
+          }
         } else {
           setTimeout(() => {
             flipped[0].classList.remove('flip')
