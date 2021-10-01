@@ -108,8 +108,28 @@ const flipFunction = () => {
   }
 }
 
+const dinamicFooter = () => {
+  setInterval(() => {
+    const apolo = document.querySelector('.apolo');
+    const caio = document.querySelector('.caio');
+    if (apolo.style.color === 'white') {
+      apolo.style.color = 'black';
+      caio.style.color = 'white';
+      caio.style.fontSize = '1.5em';
+      apolo.style.fontSize = '';
+    } else {
+      apolo.style.color = 'white';
+      caio.style.color = 'black';
+      caio.style.fontSize = '';
+      apolo.style.fontSize = '1.5em';
+    }    
+  }, 800);
+  
+}
+
 window.onload = () => {
   creatingInitialDivs();
   insertRandomImages();
-  flipFunction();
+  flipFunction();  
+  dinamicFooter()
 }
