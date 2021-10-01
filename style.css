@@ -148,16 +148,20 @@ body {
   .header {
     background-position: center;
     background-size: cover;
+    height: 7em;
   }
 
+  .game-container {
+    height: 27em;
+  }
   .title {
     margin-bottom: 2.5em ;
     font-size: 1.5em;
   }
 
   .card-container {
-    height: 2.5em;
-    width: 2.5em;
+    height: 3.16em;
+    width: 3.16em;
     margin: 5px;
     border: 3px solid rgb(41, 31, 31);
     box-shadow: 7px 7px 10px black;
@@ -170,8 +174,8 @@ body {
   
   
   .card-front {
-    height: 2.5em;
-    width: 2.5em;
+    height: 3.16em;
+    width: 3.16em;
     border-radius: 5px;
     position:absolute;
     transform: rotateY(180deg);
@@ -179,27 +183,27 @@ body {
   }
   
   .card-front img {
-    height: 2.5em;
-    width: 2.5em;
+    height: 3.16em;
+    width: 3.16em;
     border-radius: 5px;
   }
   
   .card-back {
-    height: 2.5em;
-    width: 2.5em;
+    height: 3.16em;
+    width: 3.16em;
     border-radius: 5px;
     position:absolute;
     backface-visibility: hidden;
   }
   
   .card-back img {
-    height: 2.5em;
-    width: 2.5em;
+    height: 3.16em;
+    width: 3.16em;
     border-radius: 5px;
   }
 
   .footer {
-    height: 10em;
+    height: 7em;
   }
 }
 
