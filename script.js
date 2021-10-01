@@ -41,7 +41,6 @@ const generateRandomIndex = () => {
 const insertRandomImages = () => {
   const front_card_images = document.getElementsByClassName('card-image-front');
   const random_numbers_array = generateRandomIndex();
-  localStorage.setItem('array', JSON.stringify(random_numbers_array));
   for(let i = 0; i < front_card_images.length; i += 1) {
     front_card_images[i].src = images_array[random_numbers_array[i]];
   }
@@ -76,6 +75,7 @@ const removeBloc = () => {
 }
 
 const flipFunction = () => {
+  saveGame();
   const cards = document.querySelectorAll('.card-container');
   for (let i = 0; i < cards.length; i += 1) {
     cards[i].addEventListener('click', async ({ target }) => {
@@ -88,14 +88,13 @@ const flipFunction = () => {
           flipped[1].classList.remove('flip')
           flipped[0].classList.add('find')
           flipped[1].classList.add('find')
-          const find = document.querySelectorAll('.find');
-          console.log(find) 
-          for (let i = 0; i < find.length; i += 1) {
-              localStorage.setItem(`find${i}`, find[i].innerHTML);            
-          }
+          const main_content = document.querySelector('.game-container');
+          localStorage.setItem('main', main_content.innerHTML);
+          const find = document.querySelectorAll('.find');         
           if (find.length === 30) {
             setTimeout(() => {
               createWinnerPopout();
+              localStorage.clear();
             },  1000);
           }
         } else {
@@ -132,8 +131,11 @@ const dinamicFooter = () => {
   
 }
 
-const test = () => {
-  
+const saveGame = () => {
+  if (localStorage.getItem('main')) {
+    game_container.innerHTML = ''
+    game_container.innerHTML = localStorage.getItem('main');    
+  } 
 }
 
 window.onload = () => {
